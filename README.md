@@ -6,4 +6,6 @@
 
 ![example workflow](https://github.com/slavakokorin/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)
 
+### Example Of game:
+
 https://asciinema.org/a/YPzaQcKOmZgD6pPu1U5zA12no
