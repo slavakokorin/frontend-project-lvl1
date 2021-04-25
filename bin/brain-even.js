@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import userGreeting, { user } from '../src/cli.js';
-import { maxNumOfGameRounds, getRandomNumber } from '../src/index.js';
+import { maxNumOfGameRounds, getQuestionInEvenGame } from '../src/index.js';
 
 userGreeting();
 
@@ -15,13 +15,8 @@ const isCorrectUserAnswer = (randomNum, userAnswer) => {
   return сorrectAnswer;
 };
 
-const getQuestion = () => {
-  const question = `${getRandomNumber()}`;
-  return question;
-};
-
 for (let i = 1; i <= maxNumOfGameRounds; i += 1) {
-  const question = getQuestion();
+  const question = getQuestionInEvenGame();
   console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
   if (!isCorrectUserAnswer(question, userAnswer)) {

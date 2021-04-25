@@ -1,18 +1,12 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import userGreeting, { user } from '../src/cli.js';
-import { maxNumOfGameRounds, getRandomNumber } from '../src/index.js';
+import { maxNumOfGameRounds, getQuestionInCalcGame } from '../src/index.js';
 
 userGreeting();
 
 const gameTask = 'What is the result of the expression?';
 console.log(gameTask);
-
-const getRandomOperand = () => {
-  const operandArray = ['+', '-', '*'];
-  const randomOperand = Math.floor(Math.random() * operandArray.length);
-  return operandArray[randomOperand];
-};
 
 const getCorrectAnswer = (expression) => {
   const array = expression.split(' ');
@@ -32,13 +26,8 @@ const isCorrectUserAnswer = (question, userAnswer) => {
   return correctAnswer === userAnswer;
 };
 
-const getQuestion = () => {
-  const question = `${getRandomNumber()} ${getRandomOperand()} ${getRandomNumber()}`;
-  return question;
-};
-
 for (let i = 1; i <= maxNumOfGameRounds; i += 1) {
-  const question = getQuestion();
+  const question = getQuestionInCalcGame();
   console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
   if (!isCorrectUserAnswer(question, userAnswer)) {
