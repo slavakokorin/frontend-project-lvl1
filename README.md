@@ -17,3 +17,7 @@ https://asciinema.org/a/kBMaND4lPnBjaaZfSMQ3pJoVH
 ### Example Of Game "Greatest Common Divisor":
 
 https://asciinema.org/a/54Gb8ZJrd8NBsTXysMBBAGzLY
+
+### Example Of Game "Arithmetic progression":
+
+https://asciinema.org/a/1pQGzf5ToNEefz5aNmV4uWsb9
