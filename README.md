@@ -6,10 +6,14 @@
 
 ![example workflow](https://github.com/slavakokorin/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)
 
-### Example Of Game "Even Number Check:
+### Example Of Game "Even Numbers":
 
 https://asciinema.org/a/YPzaQcKOmZgD6pPu1U5zA12no
 
 ### Example Of Game "Calculator":
 
 https://asciinema.org/a/kBMaND4lPnBjaaZfSMQ3pJoVH
+
+### Example Of Game "Greatest Common Divisor":
+
+https://asciinema.org/a/54Gb8ZJrd8NBsTXysMBBAGzLY
