@@ -13,6 +13,11 @@ export const getRandomOperand = () => {
   return operandArray[randomOperand];
 };
 
+export const getQuestionInGcdGame = () => {
+  const question = `${getRandomNumber()} ${getRandomNumber()}`;
+  return question;
+};
+
 export const getQuestionInCalcGame = () => {
   const question = `${getRandomNumber()} ${getRandomOperand()} ${getRandomNumber()}`;
   return question;
