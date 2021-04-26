@@ -1,9 +1,9 @@
-export const maxNumOfGameRounds = 3;
+import readlineSync from 'readline-sync';
 
-export const getRandomNumber = () => {
-  const minRandomNum = 1;
-  const maxRandomNum = 20;
-  const number = Math.random() * (maxRandomNum - minRandomNum) + minRandomNum;
+const maxNumOfGameRounds = 3;
+
+export const getRandomNumber = (minNum, maxNum) => {
+  const number = Math.random() * (maxNum - minNum) + minNum;
   return Math.round(number);
 };
 
@@ -13,17 +13,20 @@ export const getRandomOperand = () => {
   return operandArray[randomOperand];
 };
 
-export const getQuestionInGcdGame = () => {
-  const question = `${getRandomNumber()} ${getRandomNumber()}`;
-  return question;
-};
-
-export const getQuestionInCalcGame = () => {
-  const question = `${getRandomNumber()} ${getRandomOperand()} ${getRandomNumber()}`;
-  return question;
-};
-
-export const getQuestionInEvenGame = () => {
-  const question = `${getRandomNumber()}`;
-  return question;
+export const brainGame = (getQuestionInEvenGame, getCorrectAnswer, name) => {
+  for (let i = 1; i <= maxNumOfGameRounds; i += 1) {
+    const question = getQuestionInEvenGame();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (getCorrectAnswer(question) !== userAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(question)}'.`);
+      console.log(`Let's try again, ${name}!`);
+      break;
+    } else if (getCorrectAnswer(question) === userAnswer && i === maxNumOfGameRounds) {
+      console.log(`Congratulations, ${name}!`);
+      break;
+    } else {
+      console.log('Correct!');
+    }
+  }
 };
