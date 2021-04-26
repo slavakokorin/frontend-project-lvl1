@@ -1,12 +1,16 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import userGreeting, { user } from '../src/cli.js';
-import { maxNumOfGameRounds, getQuestionInGcdGame } from '../src/index.js';
+import { getRandomNumber, brainGame } from '../src/index.js';
 
 userGreeting();
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 console.log(gameTask);
+
+const getQuestionInGcdGame = () => {
+  const question = `${getRandomNumber(1, 20)} ${getRandomNumber(1, 20)}`;
+  return question;
+};
 
 const getCorrectAnswer = (question) => {
   const array = question.split(' ');
@@ -25,18 +29,4 @@ const getCorrectAnswer = (question) => {
   return divisor.toString();
 };
 
-for (let i = 1; i <= maxNumOfGameRounds; i += 1) {
-  const question = getQuestionInGcdGame();
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (getCorrectAnswer(question) !== userAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(question)}'.`);
-    console.log(`Let's try again, ${user.name}!`);
-    break;
-  } else if (getCorrectAnswer(question) === userAnswer && i === maxNumOfGameRounds) {
-    console.log(`Congratulations, ${user.name}!`);
-    break;
-  } else {
-    console.log('Correct!');
-  }
-}
+brainGame(getQuestionInGcdGame, getCorrectAnswer, user.name);

@@ -31,6 +31,9 @@ const getQuestionInProgressionGame = () => {
 };
 
 const getCorrectAnswer = (question) => {
+  if (question === -1) {
+    answer = 0;
+  }
   return answer.toString();
 };
 

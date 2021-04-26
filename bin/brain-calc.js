@@ -1,12 +1,16 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import userGreeting, { user } from '../src/cli.js';
-import { maxNumOfGameRounds, getQuestionInCalcGame } from '../src/index.js';
+import { getRandomNumber, getRandomOperand, brainGame } from '../src/index.js';
 
 userGreeting();
 
 const gameTask = 'What is the result of the expression?';
 console.log(gameTask);
+
+const getQuestionInCalcGame = () => {
+  const question = `${getRandomNumber(1, 20)} ${getRandomOperand()} ${getRandomNumber(1, 20)}`;
+  return question;
+};
 
 const getCorrectAnswer = (expression) => {
   const array = expression.split(' ');
@@ -21,18 +25,4 @@ const getCorrectAnswer = (expression) => {
   return correctAnswer.toString();
 };
 
-for (let i = 1; i <= maxNumOfGameRounds; i += 1) {
-  const question = getQuestionInCalcGame();
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (getCorrectAnswer(question) !== userAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(question)}'.`);
-    console.log(`Let's try again, ${user.name}!`);
-    break;
-  } else if (getCorrectAnswer(question) === userAnswer && i === maxNumOfGameRounds) {
-    console.log(`Congratulations, ${user.name}!`);
-    break;
-  } else {
-    console.log('Correct!');
-  }
-}
+brainGame(getQuestionInCalcGame, getCorrectAnswer, user.name);
