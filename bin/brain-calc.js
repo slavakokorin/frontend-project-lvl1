@@ -18,23 +18,18 @@ const getCorrectAnswer = (expression) => {
   } else {
     correctAnswer = array[0] * Number(array[2]);
   }
-  return correctAnswer;
-};
-
-const isCorrectUserAnswer = (question, userAnswer) => {
-  const correctAnswer = getCorrectAnswer(question).toString();
-  return correctAnswer === userAnswer;
+  return correctAnswer.toString();
 };
 
 for (let i = 1; i <= maxNumOfGameRounds; i += 1) {
   const question = getQuestionInCalcGame();
   console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
-  if (!isCorrectUserAnswer(question, userAnswer)) {
+  if (getCorrectAnswer(question) !== userAnswer) {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(question)}'.`);
     console.log(`Let's try again, ${user.name}!`);
     break;
-  } else if (isCorrectUserAnswer(question, userAnswer) && i === maxNumOfGameRounds) {
+  } else if (getCorrectAnswer(question) === userAnswer && i === maxNumOfGameRounds) {
     console.log(`Congratulations, ${user.name}!`);
     break;
   } else {
