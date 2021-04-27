@@ -21,3 +21,7 @@ https://asciinema.org/a/54Gb8ZJrd8NBsTXysMBBAGzLY
 ### Example Of Game "Arithmetic progression":
 
 https://asciinema.org/a/1pQGzf5ToNEefz5aNmV4uWsb9
+
+### Example Of Game "Prime Number":
+
+https://asciinema.org/a/DXrzOwrItPgSe44zJWjQvzTGr
