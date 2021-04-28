@@ -13,6 +13,20 @@ export const getRandomOperand = () => {
   return operandArray[randomOperand];
 };
 
+export const getArithmeticProgression = () => {
+  const progressionLength = getRandomNumber(5, 10);
+  const progressionStep = getRandomNumber(2, 5);
+  const progressionArray = [];
+  const firstNum = getRandomNumber(1, 20);
+  progressionArray.push(firstNum);
+  let nextProgressNum = firstNum;
+  for (let i = 1; i < progressionLength; i += 1) {
+    nextProgressNum += progressionStep;
+    progressionArray.push(nextProgressNum);
+  }
+  return progressionArray;
+};
+
 export const brainGame = (getQuestionInEvenGame, getCorrectAnswer, name) => {
   for (let i = 1; i <= maxNumOfGameRounds; i += 1) {
     const question = getQuestionInEvenGame();
@@ -20,10 +34,10 @@ export const brainGame = (getQuestionInEvenGame, getCorrectAnswer, name) => {
     const userAnswer = readlineSync.question('Your answer: ');
     if (getCorrectAnswer(question) !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(question)}'.`);
-      console.log(`Let's try again, ${name}!`);
+      console.log(`Let's try again, ${name()}!`);
       break;
     } else if (getCorrectAnswer(question) === userAnswer && i === maxNumOfGameRounds) {
-      console.log(`Congratulations, ${name}!`);
+      console.log(`Congratulations, ${name()}!`);
       break;
     } else {
       console.log('Correct!');
