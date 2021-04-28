@@ -10,7 +10,7 @@
 
 https://asciinema.org/a/YPzaQcKOmZgD6pPu1U5zA12no
 
-### Example Of Game "Calculator":
+### Example Of Game "Calculate":
 
 https://asciinema.org/a/kBMaND4lPnBjaaZfSMQ3pJoVH
 
