@@ -4,7 +4,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/slavakokorin/frontend-project-lvl1)
 
-![example workflow](https://github.com/slavakokorin/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)
+![example workflow](https://github.com/slavakokorin/frontend-project-lvl1/actions/workflows/main.yml)
 
 ### Example Of Game "Even Numbers":
 
