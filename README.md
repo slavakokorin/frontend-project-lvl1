@@ -1,3 +1,24 @@
+Hi! В этом репозитории реализован учебный проект по созданию пяти консольных логических игр.
+Проект написан с использованием стандартной библиотеки JavaScript.
+
+##
+
+### INSTALL
+
+```sh
+make install
+```
+
+### START GAME
+
+```sh
+$ brain-calc
+$ brain-even
+$ brain-gcd
+$ brain-prime
+$ brain-progression
+```
+
 ##
 
 ### Hexlet tests and linter status:
