@@ -6,20 +6,20 @@
 
 ### Example Of Game "Even Numbers":
 
-[![asciicast](https://asciinema.org/a/PUKM2v4oksuj8GKZXBFYE0Ud3.svg)](https://asciinema.org/a/PUKM2v4oksuj8GKZXBFYE0Ud3)
+[![asciicast](https://asciinema.org/a/SHHS1I3MOBgzTf2MCzxRs4jqX.svg)](https://asciinema.org/a/SHHS1I3MOBgzTf2MCzxRs4jqX)
 
 ### Example Of Game "Calculate":
 
-https://asciinema.org/a/kBMaND4lPnBjaaZfSMQ3pJoVH
+[![asciicast](https://asciinema.org/a/8eIzGIjmbtGZ0OvkOLUHEmjL6.svg)](https://asciinema.org/a/8eIzGIjmbtGZ0OvkOLUHEmjL6)
 
 ### Example Of Game "Greatest Common Divisor":
 
-https://asciinema.org/a/54Gb8ZJrd8NBsTXysMBBAGzLY
+[![asciicast](https://asciinema.org/a/863pkrzwvcEfDIi8DTD5ssO0Q.svg)](https://asciinema.org/a/863pkrzwvcEfDIi8DTD5ssO0Q)
 
 ### Example Of Game "Arithmetic progression":
 
-https://asciinema.org/a/1pQGzf5ToNEefz5aNmV4uWsb9
+[![asciicast](https://asciinema.org/a/kyxWcODBB7NwW6m2a7wtaeflP.svg)](https://asciinema.org/a/kyxWcODBB7NwW6m2a7wtaeflP)
 
 ### Example Of Game "Prime Number":
 
-https://asciinema.org/a/DXrzOwrItPgSe44zJWjQvzTGr
+[![asciicast](https://asciinema.org/a/7hmh4bMRByGmfzuQy7bqPFHfX.svg)](https://asciinema.org/a/7hmh4bMRByGmfzuQy7bqPFHfX)
