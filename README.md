@@ -6,7 +6,7 @@
 
 ### Example Of Game "Even Numbers":
 
-https://asciinema.org/a/YPzaQcKOmZgD6pPu1U5zA12no
+[![asciicast](https://asciinema.org/a/PUKM2v4oksuj8GKZXBFYE0Ud3.svg)](https://asciinema.org/a/PUKM2v4oksuj8GKZXBFYE0Ud3)
 
 ### Example Of Game "Calculate":
 
