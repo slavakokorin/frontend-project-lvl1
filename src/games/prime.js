@@ -21,4 +21,6 @@ export const getCorrectAnswer = (question) => {
   return answer;
 };
 
-export const startGame = () => startBrainGameEngine(getQuestionInPrimeGame, getCorrectAnswer, gameTask);
+export const startGame = () => {
+  startBrainGameEngine(getQuestionInPrimeGame, getCorrectAnswer, gameTask);
+};

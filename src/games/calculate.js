@@ -20,4 +20,6 @@ export const getCorrectAnswer = (expression) => {
   return correctAnswer.toString();
 };
 
-export const startGame = () => startBrainGameEngine(getQuestionInCalcGame, getCorrectAnswer, gameTask);
+export const startGame = () => {
+  startBrainGameEngine(getQuestionInCalcGame, getCorrectAnswer, gameTask);
+};

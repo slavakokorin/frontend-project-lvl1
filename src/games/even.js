@@ -9,4 +9,6 @@ export const getQuestionInEvenGame = () => {
   return question;
 };
 
-export const startGame = () => startBrainGameEngine(getQuestionInEvenGame, getCorrectAnswer, gameTask);
+export const startGame = () => {
+  startBrainGameEngine(getQuestionInEvenGame, getCorrectAnswer, gameTask);
+};

@@ -24,4 +24,6 @@ export const getCorrectAnswer = (question) => {
   return divisor.toString();
 };
 
-export const startGame = () => startBrainGameEngine(getQuestionInGcdGame, getCorrectAnswer, gameTask);
+export const startGame = () => {
+  startBrainGameEngine(getQuestionInGcdGame, getCorrectAnswer, gameTask);
+};
