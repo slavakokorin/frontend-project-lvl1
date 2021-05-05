@@ -27,17 +27,21 @@ export const getArithmeticProgression = () => {
   return progressionArray;
 };
 
-export const brainGame = (getQuestionInEvenGame, getCorrectAnswer, name) => {
+export const startBrainGameEngine = (getQuestionInEvenGame, getCorrectAnswer, gameTask) => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  console.log(gameTask);
   for (let i = 1; i <= maxNumOfGameRounds; i += 1) {
     const question = getQuestionInEvenGame();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (getCorrectAnswer(question) !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(question)}'.`);
-      console.log(`Let's try again, ${name()}!`);
+      console.log(`Let's try again, ${name}!`);
       break;
     } else if (getCorrectAnswer(question) === userAnswer && i === maxNumOfGameRounds) {
-      console.log(`Congratulations, ${name()}!`);
+      console.log(`Congratulations, ${name}!`);
       break;
     } else {
       console.log('Correct!');
