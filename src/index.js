@@ -5,13 +5,8 @@ export default (getGameRound, gameTask) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(gameTask);
-  let roundsCount = 0;
-  while (roundsCount < 3) {
-    if (getGameRound() === false) {
-      console.log(`Let's try again, ${userName}!`);
-      break;
-    }
-    roundsCount += 1;
+  if (getGameRound()) {
+    return console.log(`Congratulations, ${userName}!`);
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Let's try again, ${userName}!`);
 };

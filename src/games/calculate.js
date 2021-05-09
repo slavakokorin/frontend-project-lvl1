@@ -14,15 +14,15 @@ const getQuestionInCalcGame = () => {
   return question;
 };
 
-const getCorrectAnswer = (expression) => {
-  const array = expression.split(' ');
+const getCorrectAnswer = (gameQuestion) => {
+  const expression = gameQuestion.split(' ');
   let correctAnswer;
-  if (array[1] === '+') {
-    correctAnswer = Number(array[0]) + Number(array[2]);
-  } else if (array[1] === '-') {
-    correctAnswer = Number(array[0]) - Number(array[2]);
+  if (expression[1] === '+') {
+    correctAnswer = Number(expression[0]) + Number(expression[2]);
+  } else if (expression[1] === '-') {
+    correctAnswer = Number(expression[0]) - Number(expression[2]);
   } else {
-    correctAnswer = Number(array[0]) * Number(array[2]);
+    correctAnswer = Number(expression[0]) * Number(expression[2]);
   }
   return correctAnswer.toString();
 };

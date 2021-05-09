@@ -1,14 +1,18 @@
 import readlineSync from 'readline-sync';
 
+const roundsCount = 3;
+
 export const generateRound = (getQuestionInGame, getCorrectAnswer) => {
-  const question = getQuestionInGame();
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (getCorrectAnswer(question) !== userAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(question)}'.`);
-    return false;
+  for (let i = 1; i <= roundsCount; i += 1) {
+    const question = getQuestionInGame();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (getCorrectAnswer(question) !== userAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(question)}'.`);
+      return false;
+    }
+    console.log('Correct!');
   }
-  console.log('Correct!');
   return true;
 };
 

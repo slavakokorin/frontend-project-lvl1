@@ -8,14 +8,14 @@ export const getQuestionInGcdGame = () => {
   return question;
 };
 
-export const getCorrectAnswer = (question) => {
-  const array = question.split(' ');
+export const getCorrectAnswer = (gameQuestion) => {
+  const expression = gameQuestion.split(' ');
   let divisor = 1;
-  let minElement = Number(array[1]);
-  let maxElement = Number(array[0]);
-  if (Number(array[0]) < Number(array[1])) {
-    minElement = Number(array[0]);
-    maxElement = Number(array[1]);
+  let minElement = Number(expression[1]);
+  let maxElement = Number(expression[0]);
+  if (Number(expression[0]) < Number(expression[1])) {
+    minElement = Number(expression[0]);
+    maxElement = Number(expression[1]);
   }
   for (let i = 1; i <= minElement; i += 1) {
     if (maxElement % i === 0 && minElement % i === 0) {

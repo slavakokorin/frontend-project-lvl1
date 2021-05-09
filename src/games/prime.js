@@ -8,14 +8,14 @@ export const getQuestionInPrimeGame = () => {
   return question;
 };
 
-export const getCorrectAnswer = (question) => {
-  const questionToNumber = Number(question);
+export const getCorrectAnswer = (gameQuestion) => {
+  const verifiableNum = Number(gameQuestion);
   let answer = 'yes';
-  if (questionToNumber <= 1) {
+  if (verifiableNum <= 1) {
     answer = 'no';
   }
-  for (let i = 2; i <= questionToNumber / 2; i += 1) {
-    if (questionToNumber % i === 0) {
+  for (let i = 2; i <= verifiableNum / 2; i += 1) {
+    if (verifiableNum % i === 0) {
       answer = 'no';
     }
   }
