@@ -1,4 +1,5 @@
-import { startBrainGameEngine, getRandomNumber } from '../index.js';
+import getRandomNumber, { generateRound } from '../utilities.js';
+import startBrainGameEngine from '../index.js';
 
 export const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -9,6 +10,6 @@ export const getQuestionInEvenGame = () => {
   return question;
 };
 
-export const startGame = () => {
-  startBrainGameEngine(getQuestionInEvenGame, getCorrectAnswer, gameTask);
-};
+const gameRound = () => generateRound(getQuestionInEvenGame, getCorrectAnswer);
+
+export const startGame = () => startBrainGameEngine(gameRound, gameTask);

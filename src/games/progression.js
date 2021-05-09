@@ -1,4 +1,19 @@
-import { startBrainGameEngine, getRandomNumber, getArithmeticProgression } from '../index.js';
+import getRandomNumber, { generateRound } from '../utilities.js';
+import startBrainGameEngine from '../index.js';
+
+const getArithmeticProgression = () => {
+  const progressionLength = getRandomNumber(5, 10);
+  const progressionStep = getRandomNumber(2, 5);
+  const progressionArray = [];
+  const firstNum = getRandomNumber(1, 20);
+  progressionArray.push(firstNum);
+  let nextProgressNum = firstNum;
+  for (let i = 1; i < progressionLength; i += 1) {
+    nextProgressNum += progressionStep;
+    progressionArray.push(nextProgressNum);
+  }
+  return progressionArray;
+};
 
 export const gameTask = 'What number is missing in the progression?';
 
@@ -23,6 +38,6 @@ export const getCorrectAnswer = (question) => {
   return answer.toString();
 };
 
-export const startGame = () => {
-  startBrainGameEngine(getQuestionInProgressionGame, getCorrectAnswer, gameTask);
-};
+const gameRound = () => generateRound(getQuestionInProgressionGame, getCorrectAnswer);
+
+export const startGame = () => startBrainGameEngine(gameRound, gameTask);

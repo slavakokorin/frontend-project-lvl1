@@ -1,13 +1,20 @@
-import { startBrainGameEngine, getRandomNumber, getRandomOperand } from '../index.js';
+import getRandomNumber, { generateRound } from '../utilities.js';
+import startBrainGameEngine from '../index.js';
+
+const getRandomOperand = () => {
+  const operands = ['+', '-', '*'];
+  const indexOfOperand = getRandomNumber(0, 2);
+  return operands[indexOfOperand];
+};
 
 export const gameTask = 'What is the result of the expression?';
 
-export const getQuestionInCalcGame = () => {
+const getQuestionInCalcGame = () => {
   const question = `${getRandomNumber(1, 20)} ${getRandomOperand()} ${getRandomNumber(1, 20)}`;
   return question;
 };
 
-export const getCorrectAnswer = (expression) => {
+const getCorrectAnswer = (expression) => {
   const array = expression.split(' ');
   let correctAnswer;
   if (array[1] === '+') {
@@ -20,6 +27,6 @@ export const getCorrectAnswer = (expression) => {
   return correctAnswer.toString();
 };
 
-export const startGame = () => {
-  startBrainGameEngine(getQuestionInCalcGame, getCorrectAnswer, gameTask);
-};
+const gameRound = () => generateRound(getQuestionInCalcGame, getCorrectAnswer);
+
+export const startGame = () => startBrainGameEngine(gameRound, gameTask);
