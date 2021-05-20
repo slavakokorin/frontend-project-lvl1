@@ -1,4 +1,4 @@
-import getRandomNumber, { generateRound } from '../utilities.js';
+import getRandomNumber from '../utilities.js';
 import startBrainGameEngine from '../index.js';
 
 export const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -22,6 +22,10 @@ export const getCorrectAnswer = (gameQuestion) => {
   return answer;
 };
 
-const gameRound = () => generateRound(getQuestionInPrimeGame, getCorrectAnswer);
+const getRound = () => {
+  const gameQuestion = getQuestionInPrimeGame();
+  const answer = getCorrectAnswer(gameQuestion);
+  return [gameQuestion, answer];
+};
 
-export const startGame = () => startBrainGameEngine(gameRound, gameTask);
+export const startGame = () => startBrainGameEngine(getRound, gameTask);

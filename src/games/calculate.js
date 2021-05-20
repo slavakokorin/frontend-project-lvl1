@@ -1,4 +1,4 @@
-import getRandomNumber, { generateRound } from '../utilities.js';
+import getRandomNumber from '../utilities.js';
 import startBrainGameEngine from '../index.js';
 
 const getRandomOperand = () => {
@@ -27,6 +27,10 @@ const getCorrectAnswer = (gameQuestion) => {
   return correctAnswer.toString();
 };
 
-const gameRound = () => generateRound(getQuestionInCalcGame, getCorrectAnswer);
+const getRound = () => {
+  const gameQuestion = getQuestionInCalcGame();
+  const answer = getCorrectAnswer(gameQuestion);
+  return [gameQuestion, answer];
+};
 
-export const startGame = () => startBrainGameEngine(gameRound, gameTask);
+export const startGame = () => startBrainGameEngine(getRound, gameTask);
