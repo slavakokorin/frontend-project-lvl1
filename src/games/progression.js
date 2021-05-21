@@ -1,43 +1,39 @@
-import getRandomNumber, { generateRound } from '../utilities.js';
+import getRandomNumber from '../utilities.js';
 import startBrainGameEngine from '../index.js';
+
+export const gameTask = 'What number is missing in the progression?';
 
 const getArithmeticProgression = () => {
   const progressionLength = getRandomNumber(5, 10);
   const progressionStep = getRandomNumber(2, 5);
-  const progressionArray = [];
+  const progression = [];
   const firstNum = getRandomNumber(1, 20);
-  progressionArray.push(firstNum);
+  progression.push(firstNum);
   let nextProgressNum = firstNum;
   for (let i = 1; i < progressionLength; i += 1) {
     nextProgressNum += progressionStep;
-    progressionArray.push(nextProgressNum);
+    progression.push(nextProgressNum);
   }
-  return progressionArray;
+  return progression;
 };
 
-export const gameTask = 'What number is missing in the progression?';
+// let answer;
 
-let answer;
-
-export const getQuestionInProgressionGame = () => {
-  const progressionArray = getArithmeticProgression();
-  const secretNum = getRandomNumber(0, progressionArray.length - 1);
-  answer = progressionArray[secretNum];
-  progressionArray[secretNum] = '..';
+export const getRoundInProgressionGame = () => {
+  const progression = getArithmeticProgression();
+  const secretNum = getRandomNumber(0, progression.length - 1);
+  const answer = progression[secretNum].toString();
+  progression[secretNum] = '..';
   let question = '';
-  for (let i = 0; i < progressionArray.length; i += 1) {
-    question += `${progressionArray[i]} `;
+  for (let i = 0; i < progression.length; i += 1) {
+    question += `${progression[i]} `;
   }
-  return question;
+  return [question, answer];
 };
 
-export const getCorrectAnswer = (question) => {
-  if (question === -1) {
-    answer = 0;
-  }
-  return answer.toString();
-};
+// const getRound = () => {
+//   const gameQuestion = getQuestionInProgressionGame();
+//   return gameQuestion;
+// };
 
-const gameRound = () => generateRound(getQuestionInProgressionGame, getCorrectAnswer);
-
-export const startGame = () => startBrainGameEngine(gameRound, gameTask);
+export const startGame = () => startBrainGameEngine(getRoundInProgressionGame, gameTask);
