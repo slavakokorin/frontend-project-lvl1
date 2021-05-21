@@ -17,8 +17,6 @@ const getArithmeticProgression = () => {
   return progression;
 };
 
-// let answer;
-
 export const getRoundInProgressionGame = () => {
   const progression = getArithmeticProgression();
   const secretNum = getRandomNumber(0, progression.length - 1);
@@ -30,10 +28,5 @@ export const getRoundInProgressionGame = () => {
   }
   return [question, answer];
 };
-
-// const getRound = () => {
-//   const gameQuestion = getQuestionInProgressionGame();
-//   return gameQuestion;
-// };
 
 export const startGame = () => startBrainGameEngine(getRoundInProgressionGame, gameTask);

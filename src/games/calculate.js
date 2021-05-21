@@ -16,13 +16,11 @@ const getQuestionInCalcGame = () => {
 
 const getCorrectAnswer = (gameQuestion) => {
   const expression = gameQuestion.split(' ');
-  let correctAnswer;
+  let correctAnswer = Number(expression[0]) * Number(expression[2]);
   if (expression[1] === '+') {
     correctAnswer = Number(expression[0]) + Number(expression[2]);
   } else if (expression[1] === '-') {
     correctAnswer = Number(expression[0]) - Number(expression[2]);
-  } else {
-    correctAnswer = Number(expression[0]) * Number(expression[2]);
   }
   return correctAnswer.toString();
 };
