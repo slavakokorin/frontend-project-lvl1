@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startGame } from '../src/games/gcdivisor.js';
+import startBrainGameEngine from '../src/games/gcdivisor.js';
 
-startGame();
+startBrainGameEngine();
