@@ -1,7 +1,7 @@
 import getRandomNumber from '../utilities.js';
 import startBrainGameEngine from '../index.js';
 
-export const gameTask = 'Find the greatest common divisor of given numbers.';
+const gameTask = 'Find the greatest common divisor of given numbers.';
 
 export const getQuestionInGcdGame = () => {
   const question = `${getRandomNumber(1, 20)} ${getRandomNumber(1, 20)}`;
@@ -31,4 +31,4 @@ const getRound = () => {
   return [gameQuestion, answer];
 };
 
-export const startGame = () => startBrainGameEngine(getRound, gameTask);
+export default () => startBrainGameEngine(getRound, gameTask);
