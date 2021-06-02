@@ -3,7 +3,7 @@ import startBrainGameEngine from '../index.js';
 
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const getCorrectAnswer = (num) => (num % 2 === 0 ? 'yes' : 'no');
+const isNumberEven = (num) => num % 2 === 0;
 
 export const getQuestionInEvenGame = () => {
   const question = `${getRandomNumber(1, 20)}`;
@@ -12,7 +12,10 @@ export const getQuestionInEvenGame = () => {
 
 const getRound = () => {
   const gameQuestion = getQuestionInEvenGame();
-  const answer = getCorrectAnswer(gameQuestion);
+  let answer = 'no';
+  if (isNumberEven(gameQuestion)) {
+    answer = 'yes';
+  }
   return [gameQuestion, answer];
 };
 

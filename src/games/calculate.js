@@ -3,22 +3,32 @@ import startBrainGameEngine from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
 
-const getCorrectAnswer = (gameQuestion) => {
-  const expression = gameQuestion.split(' ');
-  let correctAnswer = Number(expression[0]) * Number(expression[2]);
-  if (expression[1] === '+') {
-    correctAnswer = Number(expression[0]) + Number(expression[2]);
-  } else if (expression[1] === '-') {
-    correctAnswer = Number(expression[0]) - Number(expression[2]);
+const solveExprssion = (num1, num2, operand) => {
+  let result;
+  switch (operand) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    default:
+      throw new Error(`Unknown operand: '${operand}'!`);
   }
-  return correctAnswer.toString();
+  return result.toString();
 };
 
 const getRound = () => {
   const operands = ['+', '-', '*'];
-  const indexOfOperand = getRandomNumber(0, 2);
-  const gameQuestion = `${getRandomNumber(1, 20)} ${operands[indexOfOperand]} ${getRandomNumber(1, 20)}`;
-  const answer = getCorrectAnswer(gameQuestion);
+  const indexOfOperand = getRandomNumber(0, operands.length - 1);
+  const operandForGameQuestion = operands[indexOfOperand];
+  const firstNumber = getRandomNumber(1, 20);
+  const secondNumber = getRandomNumber(1, 20);
+  const gameQuestion = `${firstNumber} ${operandForGameQuestion} ${secondNumber}`;
+  const answer = solveExprssion(firstNumber, secondNumber, operandForGameQuestion);
   return [gameQuestion, answer];
 };
 
