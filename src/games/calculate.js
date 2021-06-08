@@ -28,8 +28,8 @@ const getRound = () => {
   const first = getRandomNumber(1, 20);
   const second = getRandomNumber(1, 20);
   const question = `${first} ${operand} ${second}`;
-  const answer = calculate(first, second, operand);
-  return [question, answer.toString()];
+  const answer = calculate(first, second, operand).toString();
+  return [question, answer];
 };
 
 export default () => startGame(getRound, gameTask);
