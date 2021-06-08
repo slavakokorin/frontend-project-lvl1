@@ -3,32 +3,28 @@ import startGame from '../index.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
-export const getQuestionInGcdGame = () => {
-  const question = `${getRandomNumber(1, 20)} ${getRandomNumber(1, 20)}`;
-  return question;
-};
-
-export const getCorrectAnswer = (gameQuestion) => {
-  const expression = gameQuestion.split(' ');
+const getCorrectAnswer = (num1, num2) => {
   let divisor = 1;
-  let minElement = Number(expression[1]);
-  let maxElement = Number(expression[0]);
-  if (Number(expression[0]) < Number(expression[1])) {
-    minElement = Number(expression[0]);
-    maxElement = Number(expression[1]);
+  let minElement = num1;
+  let maxElement = num2;
+  if (num2 < num1) {
+    minElement = num2;
+    maxElement = num1;
   }
   for (let i = 1; i <= minElement; i += 1) {
     if (maxElement % i === 0 && minElement % i === 0) {
       divisor = i;
     }
   }
-  return divisor.toString();
+  return divisor;
 };
 
 const getRound = () => {
-  const gameQuestion = getQuestionInGcdGame();
-  const answer = getCorrectAnswer(gameQuestion);
-  return [gameQuestion, answer];
+  const first = getRandomNumber(1, 20);
+  const second = getRandomNumber(1, 20);
+  const question = `${first} ${second}`;
+  const answer = getCorrectAnswer(first, second).toString();
+  return [question, answer];
 };
 
 export default () => startGame(getRound, gameTask);
