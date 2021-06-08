@@ -3,7 +3,7 @@ import startGame from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
 
-const solveExprssion = (num1, num2, operand) => {
+const calculate = (num1, num2, operand) => {
   let result;
   switch (operand) {
     case '+':
@@ -18,18 +18,18 @@ const solveExprssion = (num1, num2, operand) => {
     default:
       throw new Error(`Unknown operand: '${operand}'!`);
   }
-  return result.toString();
+  return result;
 };
 
 const getRound = () => {
   const operands = ['+', '-', '*'];
-  const indexOfOperand = getRandomNumber(0, operands.length - 1);
-  const operandForGameQuestion = operands[indexOfOperand];
-  const firstNumber = getRandomNumber(1, 20);
-  const secondNumber = getRandomNumber(1, 20);
-  const gameQuestion = `${firstNumber} ${operandForGameQuestion} ${secondNumber}`;
-  const answer = solveExprssion(firstNumber, secondNumber, operandForGameQuestion);
-  return [gameQuestion, answer];
+  const operandIndex = getRandomNumber(0, operands.length - 1);
+  const operand = operands[operandIndex];
+  const first = getRandomNumber(1, 20);
+  const second = getRandomNumber(1, 20);
+  const question = `${first} ${operand} ${second}`;
+  const answer = calculate(first, second, operand);
+  return [question, answer.toString()];
 };
 
 export default () => startGame(getRound, gameTask);
