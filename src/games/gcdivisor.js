@@ -3,7 +3,7 @@ import startGame from '../index.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
-const getCorrectAnswer = (num1, num2) => {
+const getGreatestDivisor = (num1, num2) => {
   let divisor = 1;
   const minElement = Math.min(num1, num2);
   const maxElement = Math.max(num1, num2);
@@ -19,7 +19,7 @@ const getRound = () => {
   const first = getRandomNumber(1, 20);
   const second = getRandomNumber(1, 20);
   const question = `${first} ${second}`;
-  const answer = getCorrectAnswer(first, second).toString();
+  const answer = getGreatestDivisor(first, second).toString();
   return [question, answer];
 };
 
