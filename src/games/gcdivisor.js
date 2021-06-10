@@ -3,15 +3,17 @@ import startGame from '../index.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
-const getGreatestDivisor = (num1, num2) => {
-  let divisor = 1;
-  const minElement = Math.min(num1, num2);
-  const maxElement = Math.max(num1, num2);
-  for (let i = 1; i <= minElement; i += 1) {
-    if (maxElement % i === 0 && minElement % i === 0) {
-      divisor = i;
+const getGreatestDivisor = (first, second) => {
+  let num1 = first;
+  let num2 = second;
+  while (num1 !== 0 && num2 !== 0) {
+    if (num1 > num2) {
+      num1 %= num2;
+    } else {
+      num2 %= num1;
     }
   }
+  const divisor = num1 + num2;
   return divisor;
 };
 
