@@ -1,4 +1,4 @@
-import getRandomNumber from '../utilities.js';
+import getRandomNumber, { operands } from '../utilities.js';
 import startGame from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
@@ -22,7 +22,6 @@ const calculate = (num1, num2, operand) => {
 };
 
 const getRound = () => {
-  const operands = ['+', '-', '*'];
   const operandIndex = getRandomNumber(0, operands.length - 1);
   const operand = operands[operandIndex];
   const first = getRandomNumber(1, 20);
