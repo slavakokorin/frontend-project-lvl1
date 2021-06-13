@@ -1,7 +1,9 @@
-import getRandomNumber, { operands } from '../utilities.js';
+import getRandomNumber from '../utilities.js';
 import startGame from '../index.js';
 
 const gameTask = 'What is the result of the expression?';
+
+const operands = ['+', '-', '*'];
 
 const calculate = (num1, num2, operand) => {
   let result;
