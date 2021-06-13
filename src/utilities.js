@@ -3,6 +3,4 @@ const getRandomNumber = (min, max) => {
   return Math.round(number);
 };
 
-export const operands = ['+', '-', '*'];
-
 export default getRandomNumber;
